@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'under-construction'], function () {
+    Route::get('/live-site', function() {
+        echo 'content!';
+    });
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
+
